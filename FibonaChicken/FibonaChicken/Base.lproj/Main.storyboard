@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fnk-nJ-PAH">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FibonaChicken" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smallChicken" translatesAutoresizingMaskIntoConstraints="NO" id="rYY-mX-j0Q">
+                                <rect key="frame" x="147.5" y="293.5" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="rYY-mX-j0Q" secondAttribute="height" multiplier="1:1" id="tbh-Kr-J6f"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <constraints>
+                            <constraint firstItem="rYY-mX-j0Q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7sP-LD-9My"/>
+                            <constraint firstItem="rYY-mX-j0Q" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="cvH-Xt-55O"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20" y="67"/>
+        </scene>
+        <!--Chicken Input View Controller-->
+        <scene sceneID="M8y-Na-ajK">
+            <objects>
+                <viewController id="Fnk-nJ-PAH" customClass="ChickenInputViewController" customModule="FibonaChicken" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S7D-13-71D">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chicken" translatesAutoresizingMaskIntoConstraints="NO" id="LUi-tD-L3L">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="291"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="몇 명이서  치킨을 먹을 것인가" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zd-4N-ndW">
+                                <rect key="frame" x="16" y="315" width="156" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEI-pd-bOP">
+                                <rect key="frame" x="16" y="616" width="343" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="치킨을 점지해주세요">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" red="0.94509804249999996" green="0.60392159219999997" blue="0.21960783" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </backgroundConfiguration>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="H2P-NF-VLj" kind="presentation" id="luD-3z-YEB"/>
+                                </connections>
+                            </button>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100000000" translatesAutoresizingMaskIntoConstraints="NO" id="1zr-u0-f4q">
+                                <rect key="frame" x="265" y="547" width="94" height="32"/>
+                                <connections>
+                                    <action selector="stepperValueChanged:" destination="Fnk-nJ-PAH" eventType="valueChanged" id="YIG-BF-mQA"/>
+                                </connections>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사람 수를 입력해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xYN-UW-JZ4">
+                                <rect key="frame" x="55" y="518" width="156" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="opaqueSeparatorColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RR8-wT-dx3">
+                                <rect key="frame" x="16" y="545" width="234" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textEditingChanged:" destination="Fnk-nJ-PAH" eventType="editingChanged" id="WK4-bu-1zt"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eru-9u-Ejj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LUi-tD-L3L" firstAttribute="top" secondItem="eru-9u-Ejj" secondAttribute="top" id="5mB-Qw-oIg"/>
+                            <constraint firstItem="eru-9u-Ejj" firstAttribute="bottom" secondItem="LUi-tD-L3L" secondAttribute="bottom" constant="376" id="82n-St-NHW"/>
+                            <constraint firstItem="RR8-wT-dx3" firstAttribute="top" secondItem="xYN-UW-JZ4" secondAttribute="bottom" constant="6" id="EDn-vj-Bl9"/>
+                            <constraint firstItem="eru-9u-Ejj" firstAttribute="bottom" secondItem="pEI-pd-bOP" secondAttribute="bottom" constant="20" id="EP4-ta-GEe"/>
+                            <constraint firstItem="RR8-wT-dx3" firstAttribute="centerX" secondItem="xYN-UW-JZ4" secondAttribute="centerX" id="KXh-dM-smD"/>
+                            <constraint firstItem="pEI-pd-bOP" firstAttribute="centerX" secondItem="LUi-tD-L3L" secondAttribute="centerX" id="Nog-Wj-DWS"/>
+                            <constraint firstItem="0zd-4N-ndW" firstAttribute="top" secondItem="LUi-tD-L3L" secondAttribute="bottom" constant="24" id="au6-o2-GfK"/>
+                            <constraint firstItem="eru-9u-Ejj" firstAttribute="bottom" secondItem="pEI-pd-bOP" secondAttribute="bottom" constant="20" id="bY4-kp-a2M"/>
+                            <constraint firstItem="pEI-pd-bOP" firstAttribute="top" secondItem="RR8-wT-dx3" secondAttribute="bottom" constant="37" id="h9x-o2-Z0f"/>
+                            <constraint firstItem="pEI-pd-bOP" firstAttribute="leading" secondItem="0zd-4N-ndW" secondAttribute="leading" id="hBf-Pf-b8X"/>
+                            <constraint firstItem="LUi-tD-L3L" firstAttribute="centerX" secondItem="S7D-13-71D" secondAttribute="centerX" id="iLW-fl-F8B"/>
+                            <constraint firstItem="0zd-4N-ndW" firstAttribute="leading" secondItem="S7D-13-71D" secondAttribute="leadingMargin" id="juG-xO-q2p"/>
+                            <constraint firstItem="RR8-wT-dx3" firstAttribute="leading" secondItem="pEI-pd-bOP" secondAttribute="leading" id="k8m-JE-XK0"/>
+                            <constraint firstItem="eru-9u-Ejj" firstAttribute="trailing" secondItem="0zd-4N-ndW" secondAttribute="trailing" constant="203" id="mMP-8j-ZJq"/>
+                            <constraint firstItem="1zr-u0-f4q" firstAttribute="trailing" secondItem="pEI-pd-bOP" secondAttribute="trailing" id="msf-Be-FFS"/>
+                            <constraint firstItem="eru-9u-Ejj" firstAttribute="trailing" secondItem="xYN-UW-JZ4" secondAttribute="trailing" constant="164" id="tyh-pn-Q0I"/>
+                            <constraint firstItem="eru-9u-Ejj" firstAttribute="bottom" secondItem="0zd-4N-ndW" secondAttribute="bottom" constant="301" id="u6y-Jc-FhA"/>
+                            <constraint firstItem="RR8-wT-dx3" firstAttribute="bottom" secondItem="1zr-u0-f4q" secondAttribute="bottom" id="y1T-rc-4kM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="resultButton" destination="pEI-pd-bOP" id="9Yj-Zd-Bcb"/>
+                        <outlet property="stepper" destination="1zr-u0-f4q" id="NtF-9N-VMh"/>
+                        <outlet property="textField" destination="RR8-wT-dx3" id="WM1-rN-ebK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LD1-jA-pdt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20" y="757.87106446776613"/>
+        </scene>
+        <!--Chicken Output View Controller-->
+        <scene sceneID="my4-Qk-R6e">
+            <objects>
+                <viewController id="H2P-NF-VLj" customClass="ChickenOutputViewController" customModule="FibonaChicken" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3jV-Sj-6b5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chicken" translatesAutoresizingMaskIntoConstraints="NO" id="AZQ-XR-QVf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="271"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10명이서   먹는다면..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yPI-Pu-MxP">
+                                <rect key="frame" x="16" y="295" width="156" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="6마리 주문하세여!!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LSQ-Mu-dCs">
+                                <rect key="frame" x="16" y="547" width="164" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="얼른요 !!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJ3-B8-h6m">
+                                <rect key="frame" x="188" y="562" width="156" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="opaqueSeparatorColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="CKK-1G-5dy"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CKK-1G-5dy" firstAttribute="trailing" secondItem="rJ3-B8-h6m" secondAttribute="trailing" constant="164" id="0C9-dG-8jd"/>
+                            <constraint firstItem="CKK-1G-5dy" firstAttribute="bottom" secondItem="AZQ-XR-QVf" secondAttribute="bottom" constant="376" id="GwS-FM-UJg"/>
+                            <constraint firstItem="yPI-Pu-MxP" firstAttribute="top" secondItem="AZQ-XR-QVf" secondAttribute="bottom" constant="24" id="P2S-Va-2Lb"/>
+                            <constraint firstItem="CKK-1G-5dy" firstAttribute="trailing" secondItem="yPI-Pu-MxP" secondAttribute="trailing" constant="203" id="h64-vv-zpw"/>
+                            <constraint firstItem="AZQ-XR-QVf" firstAttribute="top" secondItem="CKK-1G-5dy" secondAttribute="top" id="hDt-CP-CED"/>
+                            <constraint firstItem="yPI-Pu-MxP" firstAttribute="leading" secondItem="3jV-Sj-6b5" secondAttribute="leadingMargin" id="itV-0M-Buo"/>
+                            <constraint firstItem="CKK-1G-5dy" firstAttribute="bottom" secondItem="yPI-Pu-MxP" secondAttribute="bottom" constant="301" id="lnN-ih-r7t"/>
+                            <constraint firstItem="AZQ-XR-QVf" firstAttribute="centerX" secondItem="3jV-Sj-6b5" secondAttribute="centerX" id="tyJ-rB-Kom"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="chickenLabel" destination="LSQ-Mu-dCs" id="2qu-Pt-d3h"/>
+                        <outlet property="peopleLabel" destination="yPI-Pu-MxP" id="uVs-Pq-3de"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6MX-U7-9Yd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="826" y="751"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chicken" width="375" height="400"/>
+        <image name="smallChicken" width="80" height="80"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
