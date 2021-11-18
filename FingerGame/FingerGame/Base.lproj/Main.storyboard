@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Finger Start View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="FingerStartViewController" customModule="FingerGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="손가락 묶기 게임" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B72-xh-oCf">
+                                <rect key="frame" x="112" y="105" width="152" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" name="green"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ra-xz-1At">
+                                <rect key="frame" x="142" y="453" width="90" height="37"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="시작하기">
+                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="19"/>
+                                    <color key="baseForegroundColor" name="yellow"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="3gt-2q-25f" kind="presentation" id="9Id-FX-gST"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9Ra-xz-1At" secondAttribute="bottom" constant="177" id="3Vw-an-P0P"/>
+                            <constraint firstItem="9Ra-xz-1At" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Dhc-OY-sjQ"/>
+                            <constraint firstItem="9Ra-xz-1At" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="142" id="jEL-Y4-2jd"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20" y="80.50974512743629"/>
+        </scene>
+        <!--Finger Game View Controller-->
+        <scene sceneID="Hzc-5Q-IyL">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="3gt-2q-25f" customClass="FingerGameViewController" customModule="FingerGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HPc-37-PTT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ejF-Uk-FY1">
+                                <rect key="frame" x="9" y="21" width="48" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="xmark.rectangle" catalog="system">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="closeButtonClicked:" destination="3gt-2q-25f" eventType="touchUpInside" id="j6C-Wr-1Hq"/>
+                                </connections>
+                            </button>
+                            <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PLg-3N-Hqh" customClass="FingerGameView" customModule="FingerGame" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="60" width="375" height="607"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jmm-0z-tZu">
+                                <rect key="frame" x="166" y="31" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="x1M-tV-oLn"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
+                        <constraints>
+                            <constraint firstItem="ejF-Uk-FY1" firstAttribute="leading" secondItem="x1M-tV-oLn" secondAttribute="leading" constant="9" id="2uV-XS-WF2"/>
+                            <constraint firstItem="x1M-tV-oLn" firstAttribute="trailing" secondItem="jmm-0z-tZu" secondAttribute="trailing" constant="167" id="I3v-HU-ZIG"/>
+                            <constraint firstItem="jmm-0z-tZu" firstAttribute="bottom" secondItem="ejF-Uk-FY1" secondAttribute="bottom" id="Nh1-vs-4TL"/>
+                            <constraint firstItem="PLg-3N-Hqh" firstAttribute="leading" secondItem="x1M-tV-oLn" secondAttribute="leading" id="Q5a-zc-Y0G"/>
+                            <constraint firstItem="ejF-Uk-FY1" firstAttribute="top" secondItem="x1M-tV-oLn" secondAttribute="top" constant="21" id="hyC-Nv-pfH"/>
+                            <constraint firstItem="PLg-3N-Hqh" firstAttribute="top" secondItem="ejF-Uk-FY1" secondAttribute="bottom" constant="8" id="iRM-Iu-oT6"/>
+                            <constraint firstItem="PLg-3N-Hqh" firstAttribute="bottom" secondItem="x1M-tV-oLn" secondAttribute="bottom" id="iaQ-bx-Qqb"/>
+                            <constraint firstItem="jmm-0z-tZu" firstAttribute="centerX" secondItem="PLg-3N-Hqh" secondAttribute="centerX" id="kCA-Eu-BVo"/>
+                            <constraint firstItem="PLg-3N-Hqh" firstAttribute="centerX" secondItem="HPc-37-PTT" secondAttribute="centerX" id="kMT-xK-RTY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="gameView" destination="PLg-3N-Hqh" id="lrj-qL-4yq"/>
+                        <outlet property="secondsLabel" destination="jmm-0z-tZu" id="YvD-Ho-x42"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KZ4-OD-na1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="776.79999999999995" y="79.610194902548727"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="xmark.rectangle" catalog="system" width="128" height="93"/>
+        <namedColor name="green">
+            <color red="0.61960784313725492" green="0.87058823529411766" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="yellow">
+            <color red="0.96862745098039216" green="0.91764705882352937" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
